@@ -1,15 +1,9 @@
-
-.thumbnail {
-    position: relative;
+body {
+    font-family: 'Nunito', sans-serif;
 }
 
-.caption {
-    position: absolute;
-    top: 45%;
-    left: 0;
-    width: 100%;
-}
-
-img {
-    max-width: 700px;
+.img-unique {
+    height: 250px;
+    object-fit: cover;
+    margin-top: 1em;
 }
