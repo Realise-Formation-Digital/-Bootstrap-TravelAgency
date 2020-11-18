@@ -16,7 +16,9 @@
 #formulaire-contact {
     background-color: beige;
     border: 1px solid beige;
-	padding:10px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 5%;
 }
 
 #titre-contact {
@@ -27,4 +29,11 @@
 fieldset {
     margin-bottom: 15px;
     padding: 10px;
+}
+
+#body-contact {
+    margin: 0;
+    padding: 0;
+    background: url(assets/img/background-contact.png) no-repeat center fixed;
+    background-size: cover;
 }
