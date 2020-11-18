@@ -12,3 +12,19 @@
     width:100%;
     position:absolute;
 }
+
+#formulaire-contact {
+    background-color: beige;
+    border: 1px solid beige;
+	padding:10px;
+}
+
+#titre-contact {
+    padding: 0px 3px;
+    font-weight: bold;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+}

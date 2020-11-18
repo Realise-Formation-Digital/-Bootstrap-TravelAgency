@@ -14,40 +14,42 @@
 </header>
 
 <body>
-    <div class="container">
-        <h1>Contact</h1>
-    </div>
-    <div class="container">
-        <form>
-            <div class="form-group row">
-                <label for="inlineFormInputName" class="col-sm-2 col-form-label">Nom:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inlineFormInputName" placeholder="Votre Nom">
+    <section id="formulaire-contact">
+        <div class="container">
+            <form>
+                <fieldset>
+                    <h1 id="titre-contact">Contact</h1>
+                <div class="form-group row">
+                    <label for="inlineFormInputName" class="col-sm-2 col-form-label">Nom:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inlineFormInputName">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
-                <div class="col-sm-10">
-                  <input type="tel" class="form-control" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="votre numéro">
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
+                    <div class="col-sm-10">
+                      <input type="tel" class="form-control" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputEmail4" class="col-sm-2 col-form-label">Email:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="votre email">
+                <div class="form-group row">
+                    <label for="inputEmail4" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Commentaires:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-            </div>
-        </form>
-    </div>
-    <div class="container">
-        <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8773310194797!2d6.126604616619462!3d46.19299969253617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0x6058f3a4660b6a0b!2sRue%20Viguet%208%2C%201227%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1605703114904!5m2!1sfr!2sch" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Commentaires:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+                </fieldset>
+            </form>
         </div>
-    </div>
+        <div class="container">
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8773310194797!2d6.126604616619462!3d46.19299969253617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0x6058f3a4660b6a0b!2sRue%20Viguet%208%2C%201227%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1605703114904!5m2!1sfr!2sch" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
 </body>
 
 <footer>
