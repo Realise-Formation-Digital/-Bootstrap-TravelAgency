@@ -37,3 +37,7 @@ fieldset {
     background: url(assets/img/background-contact.png) no-repeat center fixed;
     background-size: cover;
 }
+
+.bouton-envoyer {
+    float: right;
+}
