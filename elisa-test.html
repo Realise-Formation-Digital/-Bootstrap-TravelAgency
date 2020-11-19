@@ -7,15 +7,27 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="elisa-test-styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap" rel="stylesheet">             
         <title>Hello, world!</title>
     </head>
     <body>
 
 
     <header>
+        <!-- Bannière réduction -->
         <div class="banner alert-info" style="text-align: center;">Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages ! </div>
+       
+        <!-- Barre de navigation avec logo -->
         <nav class="navbar navbar-light bg-light navbar-expand-lg">
-            <a href="#" class="navbar-brand">A taste of local</a>
+            <div class="row">
+                <a href="#" class="nav-brand">
+                    <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="logo-fleur d-inline-block align-middle mr-2">
+                    <h1><span style="color:rgb(138, 30, 30);">Local</span> <span style="color:rgb(117, 19, 19)">Taste</span></h1>
+                </a>
+            </div>
+            
             <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
@@ -36,32 +48,49 @@
         </nav>
     </header>   
 
+    <!-- Section thématiques -->  
+    <div class="container-fluid">
 
+        <h2>Séjours thématiques</h2>
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="background-image: url(assets/img/section-gastronomique.jpg); object-fit: cntain;">
+                <h3>Gastronomique</h3>
+                <p>Laissez-vous tenter par les meilleures fondues et vins de Suisse</p>
+            </div>
 
-      <div class="jumbotron" style="background-image: url('assets/img/hero-riviera.jpg'); background-size: cover;">
-        <div class="container">
-          <h1 class="display-4">Toute la beauté de la Suisse</h1>
-          <p class="lead">Une sélection par une équipe de spécialistes</p>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="background-image: url(assets/img/section-relaxation.jpg); object-fit: contain;">  
+                <h3>Relaxation</h3>
+                <p>Saviez-vous que les bains thermaux suisses ont acquis une renommée mondiale ?</p>
+            </div>
+           
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="background-image: url(assets/img/section-amoureux.jpeg); object-fit: contain;">
+                <h3>Amoureux</h3>
+                <p>Profitez d'une douce évasion avec votre partenaire.</p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="background-image: url(assets/img/section-musees.jpg); object-fit: contain;">  
+                <h3>Musées</h3>
+                <p>Découvrez les nombreuses merveilles culturelles de notre pays</p>
+            </div>
+
         </div>
-      </div>
+    </div>
 
 
-
-
-
-    <div class="container-fluid row" style="margin-top:2em;">
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    <!-- Début de la partie cartes uniques -->
+    <div class="container-fluid row text-center" style="margin-top:2em;">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-bale.jpg" alt="Bâle" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title mb-0">Zürich</h5>
+                    <h5 class="card-title mb-0">Bâle</h5>
                     <p class="card-text">Découvrez Zürich, Berne, Lucerne et une sélection de villes.</p>
                     <a href="#" class="btn btn-primary">Découvrir</a>
                 </div> 
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-berne.jpg" alt="Berne" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
@@ -72,7 +101,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-interlaken.jpg" alt="Interlaken" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
@@ -83,7 +112,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-lauterbrunnen.jpg" alt="Lauterbrunnen" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
@@ -94,7 +123,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-diablerets.jpg" alt="Les Diablerets" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
@@ -105,7 +134,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-grindelwald.jpg" alt="Grindelwald" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
@@ -116,11 +145,44 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <img src="assets/img/unique-oberland.jpeg" alt="Lauterbrunnen" class="card-img-top img-unique">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title mb-0">Oberland Bernois</h5>
+                    <p class="card-text">Découvrez Zürich, Berne, Lucerne et une sélection de villes.</p>
+                    <a href="#" class="btn btn-primary">Découvrir</a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <img src="assets/img/unique-st_ursanne.jpg" alt="Bâle" class="card-img-top img-unique">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">Saint-Ursanne</h5>
+                    <p class="card-text">Découvrez Zürich, Berne, Lucerne et une sélection de villes.</p>
+                    <a href="#" class="btn btn-primary">Découvrir</a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <img src="assets/img/unique-crans_montana.jpg" alt="Bâle" class="card-img-top img-unique">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">Crans-Montana</h5>
+                    <p class="card-text">Découvrez Zürich, Berne, Lucerne et une sélection de villes.</p>
+                    <a href="#" class="btn btn-primary">Découvrir</a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <img src="assets/img/unique-riviera.jpg" alt="Bâle" class="card-img-top img-unique">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">La Riviera</h5>
                     <p class="card-text">Découvrez Zürich, Berne, Lucerne et une sélection de villes.</p>
                     <a href="#" class="btn btn-primary">Découvrir</a>
                 </div> 
