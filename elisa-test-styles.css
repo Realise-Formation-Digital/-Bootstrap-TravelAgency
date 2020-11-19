@@ -37,4 +37,6 @@ h1:hover {
     font-size: 2em;
     background-color: blue;
     color: white;
+    filter: opacity(0.50);
+    font-weight: bold;
 }
