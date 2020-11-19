@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="elisa-test-styles.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">  
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap" rel="stylesheet">             
         <title>Hello, world!</title>
     </head>
@@ -17,14 +18,16 @@
 
         <header>
             <!-- Bannière réduction -->
-            <div class="banner alert-info" style="text-align: center;">Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages ! </div>
+            <div class="banner alert-info text-white p-1" style="text-align: center; background-color: #344764;"><i class="icon-gift icon-white"></i>Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages ! </div>
         
+
             <!-- Barre de navigation avec logo -->
-            <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg">
                 <div class="row">
-                    <a href="#" class="nav-brand">
-                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="logo-fleur d-inline-block align-middle mr-2">
-                        <h1><span style="color:rgb(138, 30, 30);">Local</span> <span style="color:rgb(117, 19, 19)">Taste</span></h1>
+                    <a href="#" class="navbar-brand">
+                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
+                        <p class="align-middle"><h1><span style="color:rgb(194, 31, 31);">local</span> <span style="color:rgb(223, 84, 84)">taste</span></h1></a></p>
                     </a>
                 </div>
                 
@@ -45,15 +48,16 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </header>   
-
-
+            </nav>   
+    </div>
+</header>
         <!-- Section images thématiques -->
         <div class="container">
+            <div class="text-center">            <h2>Notre sélection thématique</h2></div>
+
             <div class="row">
                 <div class="col-lg-6 col-xl-6 mb-4">
-                    <a href ="#"><img src="assets/img/section-amoureux.jpeg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">Entre amoureux</h3></a>
+                    <a href ="#"><img src="assets/img/section-villes.jpg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">Plus belles villes</h3></a>
                 </div>
                 <div class="col-lg-6 col-xl-6 mb-4">
                     <a href ="#"><img src="assets/img/section-gastronomique.jpg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">Gastronomique</h3></a>
@@ -64,12 +68,19 @@
                 <div class="col-lg-6 col-xl-6 mb-4">
                     <a href ="#"><img src="assets/img/section-relaxation.jpg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">Relaxation</h3></a>
                 </div>
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <a href ="#"><img src="assets/img/section-amoureux.jpeg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">En amoureux</h3></a>
+                </div>
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <a href ="#"><img src="assets/img/section-eau.jpg" alt="" class="img-fluid img-section"><h3 class="carousel-caption">Bordure d'eau</h3></a>
+                </div>
             </div>
         </div>
 
         
         <!-- Début de la partie cartes uniques -->
-        <h2>Destinations</h2>
+
+        <div class="text-center">            <h2>Nos destinations préférées</h2></div>
         <div class="container-fluid row text-center">
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div class="image-zurich">
@@ -162,7 +173,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+ <!--          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
                 <img src="assets/img/unique-crans_montana.jpg" alt="Bâle" class="card-img-top img-unique">
                 <div class="card">
                     <div class="card-body">
@@ -171,7 +182,7 @@
                         <a href="#" class="btn btn-primary">Découvrir</a>
                     </div> 
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
                 <img src="assets/img/unique-riviera.jpg" alt="Bâle" class="card-img-top img-unique">
