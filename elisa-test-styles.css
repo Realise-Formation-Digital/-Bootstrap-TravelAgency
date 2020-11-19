@@ -64,14 +64,9 @@ h3 + p {
     text-align: right;
     font-size: 2em;
     color: white;
-    font-weight: bold;
+  /*  font-weight: bold; */
     background-color: rgba(0, 0, 0, .5);
     margin-right: 5px;
-}
-
-.card-body:hover{
-    opacity: 80%;
-    transition: width 2s;
 }
 
 .img-section:hover{
