@@ -35,23 +35,86 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li>
-                            <a href="#" class="nav-link">Accueil</a>
+                            <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link">Nos coups de coeur</a>
+                            <a href="nos_preferences.html" class="nav-link">Nos coups de coeur</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link">Notre entreprise</a>
+                            <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link">Contact</a>
-                        </li>
+                            <a href="contact.html" class="nav-link">Contact</a>
+                            </li>
                     </ul>
                 </div>
             </nav>   
     </div>
     <hr>
 </header>
+
+
+<div class="container-fluid p-5 bg-hero">
+<!-- Section hero avec formulaire -->  
+<section class="hero">
+    <div class="container">
+        <div class="text-center">            <h2>Formulaire de réservation</h2></div>
+        <div class="row p-5">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <div class="col">
+                        <label for="destination-dropdown">Destination :</label>
+                        <button class="btn dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="destination-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ville
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Genève</a>
+                                <a class="dropdown-item" href="#">Lausannegeles</a>
+                                <a class="dropdown-item" href="#">Zurich</a>
+                                <a class="dropdown-item" href="#">Berne</a>
+                                <a class="dropdown-item" href="#">Bâle</a>
+                            <a class="dropdown-item" href="#">Lugano</a>
+                            <a class="dropdown-item" href="#">Locarno</a>
+                            <a class="dropdown-item" href="#">Bellizone</a>                                                       
+                        </div>
+                        </button>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="date">Date de départ :</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                
+                    <div class="col-sm-6">
+                        <label for="dropdown-menu">Durée du séjour :</label>
+                        <button class="btn dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="destination-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nombre de jour
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">2-3 jour</a>
+                                <a class="dropdown-item" href="#">4-8 jour</a>
+                                <a class="dropdown-item" href="#">6-12 jour</a>
+                                <a class="dropdown-item" href="#">12-24 jour</a>                                                   
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col">
+                        <label for="nb-personne">Participants :</label>
+                        <input type="nb-participant" class="form-control" id="nb-personne" placeholder="Nombre de participants">
+                    </div>
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>   
+        </div><!--/row-->
+    </div><!--/container-->
+</div>
+</section>
+
+
 
         <!-- Section images thématiques -->
         <div class="container">

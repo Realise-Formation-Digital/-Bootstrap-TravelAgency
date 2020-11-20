@@ -95,3 +95,8 @@ header {
 .nav-link {
     font-size: 1.2em;
 }
+
+.bg-hero{
+background-image: url(assets/img/hero-riviera.jpg); 
+object-fit: cover;"
+}
