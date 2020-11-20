@@ -1,0 +1,102 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: rgb(194, 222, 255)
+    /* background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h1:hover {
+    text-decoration-style: none;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #183050;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+}
+
+h3 {
+    color: white;
+    /* text-shadow: 1px 1px 4px rgb(0, 0, 0); */
+    background-color: #E53C3A;
+    font-size: 1.5em;
+}
+
+h3 + p {
+    color: white;
+}
+
+h5{
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+}
+
+.price-tag{
+    color: #E53C3A;
+    font-weight: 600;
+}
+
+
+.img-unique {
+    height: 250px;
+    object-fit: cover;
+    margin-top: 1em;
+}
+
+.logo-fleur {
+    height: 15vh;
+    display: inline-block;
+}
+
+.custom-section-p {
+    padding-right: 15px;
+}
+
+.image-zurich {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+    font-size:13px;
+}
+
+.texte-zurich {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 2em;
+    color: white;
+  /*  font-weight: bold; */
+    background-color: rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.img-section:hover{
+    opacity: 80%;
+    transition: width 2s;
+}
+
+header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #fff;
+}
+
+.nav-link {
+    font-size: 1.2em;
+}
+
+.bg-hero{
+background-image: url(assets/img/hero-riviera.jpg); 
+object-fit: cover;"
+}
