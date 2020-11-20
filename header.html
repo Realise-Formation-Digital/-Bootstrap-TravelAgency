@@ -18,6 +18,24 @@
             margin-left:20px;
         }
 
+        .hero-background {
+            background-image: url(assets/img/hero-riviera.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height:330px;
+        }
+
+        .fromulaire-reservation {
+            margin-top:2%;
+            margin-left:5%;
+            margin-right:5%;
+
+            padding:23px;
+            background-color:white;
+            opacity: 0.8;
+            
+        }
+
     </style>
 </head>
 <body>
@@ -27,7 +45,7 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
             <div class="col-sm-6">
-                <img src="img/logo.png">
+               <!-- <img src="assets/img/logo-fleur.png"> -->
             </div>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,14 +73,15 @@
     </header>
 
     <section class="hero">
-        <div class="container-fluid">
+        <div class="container-fluid hero-background">
             <div class="row">
                 <h2>Formulaire de réservation</h2>
             </div><!--/row-->
-            <div class="row bg-light">
+            <div class="row  fromulaire-reservation">
                 <form action="/action_page.php">
-                    <div class="form-group">
-                        <div class="col">
+                    
+                    <div class="row form-group">
+                        <div class="col-sm-2">
                             <label for="destination-dropdown">Destination :</label>
                             <button class="btn dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="destination-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,15 +96,16 @@
                                 <a class="dropdown-item" href="#">Lugano</a>
                                 <a class="dropdown-item" href="#">Locarno</a>
                                 <a class="dropdown-item" href="#">Bellizone</a>                                                       
-                            </div>
+                                </div>
                             </button>
                         </div>
-                        <div class="col-sm-6">
+
+                        <div class="col-sm-4">
                             <label for="date">Date de départ :</label>
                             <input type="date" class="form-control" id="date" name="date">
                         </div>
                     
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <label for="dropdown-menu">Durée du séjour :</label>
                             <button class="btn dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="destination-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,14 +120,15 @@
                             </button>
                         </div>
 
-                        <div class="col">
+                        <div class="col-sm-2">
                             <label for="nb-personne">Participants :</label>
                             <input type="nb-participant" class="form-control" id="nb-personne" placeholder="Nombre de participants">
                         </div>
                     </div>
                     
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                   </form>   
             </div><!--/row-->
         </div><!--/container-->
