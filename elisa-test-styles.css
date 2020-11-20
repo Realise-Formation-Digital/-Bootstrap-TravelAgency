@@ -1,7 +1,8 @@
 body {
     font-family: 'Nunito', sans-serif;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
+    background: rgb(194, 222, 255)
+    /* background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
 }
 
 h1 {
@@ -31,6 +32,17 @@ h3 {
 h3 + p {
     color: white;
 }
+
+h5{
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+}
+
+.price-tag{
+    color: #E53C3A;
+    font-weight: 600;
+}
+
 
 .img-unique {
     height: 250px;
@@ -77,13 +89,9 @@ h3 + p {
 header {
     margin-bottom: 0;
     padding-bottom: 0;
+    background-color: #fff;
 }
 
 .nav-link {
     font-size: 1.2em;
-}
-
-.price-tag {
-    color: #E53C3A;
-    font-weight: bold;
 }
