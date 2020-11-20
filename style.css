@@ -14,8 +14,8 @@
 }
 
 #formulaire-contact {
-    background-color: beige;
-    border: 1px solid beige;
+    background-color: rgba(0, 0, 0, .2);
+    border: 1px solid black;
     padding-top: 5%;
     padding-bottom: 5%;
     margin: 5%;
@@ -32,10 +32,9 @@ fieldset {
 }
 
 #body-contact {
-    margin: 0;
-    padding: 0;
-    background: url(assets/img/background-contact.png) no-repeat center fixed;
-    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 .bouton-envoyer {
