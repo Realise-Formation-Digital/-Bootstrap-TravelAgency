@@ -15,7 +15,6 @@
 
 #formulaire-contact {
     background-color: rgba(0, 0, 0, .2);
-    border: 1px solid black;
     padding-top: 5%;
     padding-bottom: 5%;
     margin: 5%;
@@ -39,4 +38,21 @@ fieldset {
 
 .bouton-envoyer {
     float: right;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h1:hover {
+    text-decoration-style: none;
+}
+
+.logo-fleur {
+    height: 15vh;
+    display: inline-block;
+}
+
+.nav-link {
+    font-size: 1.2em;
 }
