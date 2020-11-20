@@ -82,3 +82,8 @@ header {
 .nav-link {
     font-size: 1.2em;
 }
+
+.price-tag {
+    color: #E53C3A;
+    font-weight: bold;
+}
