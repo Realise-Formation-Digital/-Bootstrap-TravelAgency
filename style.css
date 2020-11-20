@@ -32,8 +32,8 @@ fieldset {
 
 #body-contact {
     font-family: 'Nunito', sans-serif;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
+    background: rgb(194, 222, 255);
+   /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
 }
 
 .bouton-envoyer {
@@ -55,4 +55,14 @@ h1:hover {
 
 .nav-link {
     font-size: 1.2em;
+}
+
+header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #fff;
 }
