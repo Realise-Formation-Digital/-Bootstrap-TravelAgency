@@ -40,14 +40,6 @@ fieldset {
     float: right;
 }
 
-h1 {
-    font-size: 3em;
-}
-
-h1:hover {
-    text-decoration-style: none;
-}
-
 .logo-fleur {
     height: 15vh;
     display: inline-block;
@@ -58,8 +50,6 @@ h1:hover {
 }
 
 header {
-    margin-bottom: 0;
-    padding-bottom: 0;
     background-color: #fff;
 }
 
