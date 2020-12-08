@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap" rel="stylesheet">
+    
+
     <title>Local Taste</title>
+    <link rel="icon" type="logo" href="assets/img/logo-fleur.png" />
+    <link rel="stylesheet" href="style.css">
 
     <!--CSS Integrer-->
-    <style>
+    <!-- <style>
         body {
             font-family: 'Nunito', sans-serif;
             background: rgb(194, 222, 255)
@@ -99,54 +101,48 @@
             background-color: white;
             opacity: 0.8;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
     <header>
         <!-- Bannière réduction -->
-        <div class="banner alert-info text-white p-1" style="text-align: center; background-color: #344764;"><i
-                class="icon-gift icon-white"></i>Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages !
-        </div>
-
-
+        <div class="banner alert-info text-white p-1" style="text-align: center; background-color: #344764;"><i class="icon-gift icon-white"></i>Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages ! </div>
+    
+    
         <!-- Barre de navigation avec logo -->
-        <div class="container">
-            <nav class="navbar navbar-light navbar-expand-lg">
-                <div class="row">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
-                        <p class="align-middle">
-                            <h1 class="h1-home"><span style="color:rgb(194, 31, 31);">local</span> <span
-                                    style="color:rgb(223, 84, 84)">taste</span></h1>
-                        </p>
-                    </a>
-                </div>
-
-                <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li>
-                            <a href="index.html" class="nav-link">Accueil</a>
+    <div class="container">
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <div class="row">
+                <a href="index.html" class="navbar-brand">
+                    <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
+                    <p class="align-middle"><h1 class="h1-home"><span style="color:rgb(194, 31, 31);">local</span> <span style="color:rgb(223, 84, 84)">taste</span></h1></p>
+                </a>
+            </div>
+            
+            <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <a href="index.html" class="nav-link">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="nos_preferences.html" class="nav-link">Nos coups de coeur</a>
+                    </li>
+                    <li>
+                        <a href="offres.html" class="nav-link">Offres Spéciales</a>
+                    </li>
+                    <li>
+                        <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link">Contact</a>
                         </li>
-                        <li>
-                            <a href="nos_preferences.html" class="nav-link">Nos coups de coeur</a>
-                        </li>
-                        <li>
-                            <a href="offres.html" class="nav-link">Offres Spéciales</a>
-                        </li>
-                        <li>
-                            <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <hr>
+                </ul>
+            </div>
+        </nav>   
+    </div>
+    <hr>
     </header>
     <!-- Formulaires d'offres spéciales -->
     <section class="hero">
@@ -168,12 +164,13 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Appenzell</a>
-                                    <a class="dropdown-item" href="#">La Riviera</a>
+                                    <a class="dropdown-item" href="#">Grindelwald</a>
                                     <a class="dropdown-item" href="#">Interlaken</a>
+                                    <a class="dropdown-item" href="#">La Riviera</a>
                                     <a class="dropdown-item" href="#">Lauterbrunnen</a>
                                     <a class="dropdown-item" href="#">Les Diablerets</a>
-                                    <a class="dropdown-item" href="#">Grindelwald</a>
                                     <a class="dropdown-item" href="#">Oberland Bernois</a>
+                                    <a class="dropdown-item" href="#">Sion</a>
                                     <a class="dropdown-item" href="#">Saint-Ursanne</a>
                                 </div>
                             </button>
