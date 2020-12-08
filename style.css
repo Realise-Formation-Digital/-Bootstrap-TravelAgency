@@ -24,6 +24,9 @@
     padding: 0px 3px;
     font-weight: bold;
 }
+.new-titre-contact{
+    text-align: center;
+}
 
 fieldset {
     margin-bottom: 15px;
@@ -34,6 +37,9 @@ fieldset {
     font-family: 'Nunito', sans-serif;
     background: rgb(194, 222, 255);
    /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
+}
+.new-titre-contact{
+    background: rgb(224, 205, 30);
 }
 
 .bouton-envoyer {
