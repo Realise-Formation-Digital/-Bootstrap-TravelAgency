@@ -109,37 +109,37 @@
     </div>
 
 
-    <!-- Barre de navigation avec logo -->
-    <div class="container">
-        <nav class="navbar navbar-light navbar-expand-lg">
-            <div class="row">
-                <a href="index.html" class="navbar-brand">
-                    <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
-                    <p class="align-middle">
-                    <h1 class="h1-home"><span style="color:rgb(194, 31, 31);">local</span> <span
-                            style="color:rgb(223, 84, 84)">taste</span></h1></p>
-                </a>
-            </div>
-
-            <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li>
-                        <a href="index.html" class="nav-link">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="nos_preferences.html" class="nav-link">Nos coups de coeur</a>
-                    </li>
-                    <li>
-                        <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+            <!-- Barre de navigation avec logo -->
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <div class="row">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
+                        <p class="align-middle"><h1 class="h1-home"><span style="color:rgb(194, 31, 31);">local</span> <span style="color:rgb(223, 84, 84)">taste</span></h1></p>
+                    </a>
+                </div>
+                
+                <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li>
+                            <a href="index.html" class="nav-link">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="nos_preferences.html" class="nav-link">Nos coups de coeur</a>
+                        </li>
+                        <li>
+                            <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                        <li>
+                            <a href="login.html" class="btn btn-primary" role="button">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>   
     </div>
     <hr>
 </header>
@@ -151,7 +151,7 @@
         </div><!--/row-->
         <div class="row  fromulaire-reservation">
             <form action="/action_page.php">
-
+                
                 <div class="row form-group">
                     <div class="col-sm-2">
                         <label for="destination-dropdown">Destination :</label>
@@ -166,9 +166,9 @@
                                 <a class="dropdown-item" href="#">Zurich</a>
                                 <a class="dropdown-item" href="#">Berne</a>
                                 <a class="dropdown-item" href="#">Bâle</a>
-                                <a class="dropdown-item" href="#">Lugano</a>
-                                <a class="dropdown-item" href="#">Locarno</a>
-                                <a class="dropdown-item" href="#">Bellizone</a>
+                            <a class="dropdown-item" href="#">Lugano</a>
+                            <a class="dropdown-item" href="#">Locarno</a>
+                            <a class="dropdown-item" href="#">Bellizone</a>                                                       
                             </div>
                         </button>
                     </div>
@@ -177,11 +177,11 @@
                         <label for="date">Date de départ :</label>
                         <input type="date" class="form-control" id="date" name="date">
                     </div>
-
+                
                     <div class="col-sm-4">
-                        <label for="dropdown-menu">Durée du séjour :</label>
+                        <label for="jour-dropdown">Durée du séjour :</label>
                         <button class="btn dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="destination-dropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="jour-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Nombre de jour
                             </a>
@@ -189,22 +189,21 @@
                                 <a class="dropdown-item" href="#">2-3 jour</a>
                                 <a class="dropdown-item" href="#">4-8 jour</a>
                                 <a class="dropdown-item" href="#">6-12 jour</a>
-                                <a class="dropdown-item" href="#">12-24 jour</a>
+                                <a class="dropdown-item" href="#">12-24 jour</a>                                                   
                             </div>
                         </button>
                     </div>
 
                     <div class="col-sm-2">
                         <label for="nb-personne">Participants :</label>
-                        <input type="nb-participant" class="form-control" id="nb-personne"
-                               placeholder="Nombre de participants">
+                        <input type="nb-participant" class="form-control" id="nb-personne" placeholder="Nombre de participants">
                     </div>
                 </div>
-
+                
                 <div class="text-right">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </form>
+              </form>   
         </div><!--/row-->
     </div><!--/container-->
 </section>
