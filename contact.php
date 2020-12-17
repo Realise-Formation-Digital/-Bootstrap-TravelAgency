@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si le nom ne contient que des lettres et des espaces
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
           $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
-          echo $name_error; 
         }
       }
 
@@ -28,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si l'adresse e-mail est bien formée
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           $email_error = "Format d'email invalide";
-          echo $email_error; 
         }
       }
 
@@ -39,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si l'adresse e-mail est bien formée
         if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$phone)){
           $phone_error = "Numéro de téléphone invalide"; 
-          echo $phone_error;
         }
       }
 
