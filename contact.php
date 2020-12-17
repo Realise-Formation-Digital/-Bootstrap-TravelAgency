@@ -110,7 +110,7 @@ fclose($fp);
                             <a href="notre-entreprise.html" class="nav-link">Notre entreprise</a>
                         </li>
                         <li>
-                            <a href="contact.html" class="nav-link">Contact</a>
+                            <a href="contact.php" class="nav-link">Contact</a>
                         <li>
                             <a href="./login.html" class="btn btn-primary" role="button">&#9757lOGIN</a>
 
@@ -145,12 +145,28 @@ fclose($fp);
                         <div class="col-sm-10">
                             <input type="text" name="telephone" class="form-control" id="phone">
                         </div>
+
+                             <?php
+
+                            echo "<div class= \"messsage-erreur\" > $phone_error </div> ";
+
+                        ?>
+                    
+
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
                         <div class="col-sm-10">
                             <input type="text" name="email" class="form-control" id="inputEmail">
                         </div>
+
+                             <?php
+
+                            echo "<div class= \"messsage-erreur\" > $email_error </div> ";
+
+                        ?>
+                    
+
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Commentaires:</label>
