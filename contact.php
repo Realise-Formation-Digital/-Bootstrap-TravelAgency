@@ -133,6 +133,12 @@ fclose($fp);
                         <div class="col-sm-10">
                             <input type="text" name="nom" class="form-control" id="inlineFormInputName">
                         </div>
+                        <?php
+
+                            echo "<div class= \"messsage-erreur\" > $name_error </div> ";
+
+                        ?>
+                    
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
