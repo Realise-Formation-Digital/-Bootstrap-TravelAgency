@@ -132,7 +132,7 @@ fclose($fp);
                         </div>
                         <?php
 
-                            echo "<div class= \"messsage-erreur\" > $name_error </div> ";
+                            echo "<div class=\"message-erreur\" > $name_error </div> ";
 
                         ?>
                     
@@ -145,7 +145,7 @@ fclose($fp);
 
                              <?php
 
-                            echo "<div class= \"messsage-erreur\" > $phone_error </div> ";
+                            echo "<div class=\"message-erreur\" > $phone_error </div> ";
 
                         ?>
                     
@@ -159,7 +159,7 @@ fclose($fp);
 
                              <?php
 
-                            echo "<div class= \"messsage-erreur\" > $email_error </div> ";
+                            echo "<div class= \"message-erreur\" > $email_error </div> ";
 
                         ?>
                     

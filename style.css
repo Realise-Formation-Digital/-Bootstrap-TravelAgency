@@ -63,8 +63,8 @@ footer {
 }
 
 .message-erreur{
-    color: #ff9966;
+    color: red;
+    position: relative;
     text-align: center;
-    font-weight: bold;
     font-size: 14px;
 }
