@@ -3,68 +3,72 @@
 $nom = $email = $telephone = $commentaire = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    function test_input($data) {
+    function test_input($data)
+    {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-      }
     }
-      if (empty($_POST["nom"])) {
+
+    if (empty($_POST["nom"])) {
         $name_error = "Le nom est requis";
-      } else {
+    } else {
         $name = test_input($_POST["nom"]);
         // vérifier si le nom ne contient que des lettres et des espaces
-        if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/",$name)) {
-          $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
+        if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $name)) {
+            $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
         }
-      }
+    }
 
-      if (empty($_POST["email"])) {
+    if (empty($_POST["email"])) {
         $email_error = "Email est requis";
-      } else {
+    } else {
         $email = test_input($_POST["email"]);
         // vérifier si l'adresse e-mail est bien formée
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $email_error = "Format d'email invalide";
+            $email_error = "Format d'email invalide";
         }
-      }
+    }
 
-      if (empty($_POST["telephone"])) {
+    if (empty($_POST["telephone"])) {
         $phone_error = "Le téléphone est requis";
-      } else {
+    } else {
         $phone = test_input($_POST["telephone"]);
         // vérifier si l'adresse e-mail est bien formée
-        if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$phone)){
-          $phone_error = "Numéro de téléphone invalide"; 
+        if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i", $phone)) {
+            $phone_error = "Numéro de téléphone invalide";
         }
-      }
+    }
 
-      if (empty($_POST["commentaire"])) {
+    if (empty($_POST["commentaire"])) {
         $comment_error = "Un commentaire est requis";
-      } else {
+    } else {
         $comment = test_input($_POST["commentaire"]);
-        
-      }
+    }
 
-$data = array(
-    $_POST['nom'],
-    $_POST['email'],
-    $_POST['telephone'],
-    $_POST['commentaire']
-);
+    $data = array(
+        $_POST['nom'],
+        $_POST['email'],
+        $_POST['telephone'],
+        $_POST['commentaire']
+    );
 
-if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])){
-$validation = "Votre meassage à bien été envoyé!";
-// Open file in append mode 
-$fp = fopen('databaseContact.csv', 'a');
+    if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])) {
+        $validation = "Votre meassage à bien été envoyé!";
+        // Open file in append mode 
+        $fp = fopen('databaseContact.csv', 'a');
 
-// Append input data to the file   
-fputcsv($fp, $data);
+        // Append input data to the file   
+        fputcsv($fp, $data);
 
-// close the file 
-fclose($fp);
+        // close the file 
+        fclose($fp);
+    }
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -72,8 +76,7 @@ fclose($fp);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="icon" type="logo" href="assets/img/logo-fleur.png" />
     <link type="text/css" rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -85,8 +88,7 @@ fclose($fp);
 
     <header>
         <!-- Bannière réduction -->
-        <div class="banner alert-info text-white p-1" style="text-align: center; background-color: #344764;"><i
-                class="icon-gift icon-white"></i>Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages !
+        <div class="banner alert-info text-white p-1" style="text-align: center; background-color: #344764;"><i class="icon-gift icon-white"></i>Utilisez le code COVID et bénéficiez de -15% sur TOUS les voyages !
         </div>
 
 
@@ -97,14 +99,12 @@ fclose($fp);
                     <a href="index.html" class="navbar-brand">
                         <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
                         <p class="align-middle">
-                            <h1><span style="color:rgb(194, 31, 31);">local</span> <span
-                                    style="color:rgb(223, 84, 84)">taste</span></h1>
+                            <h1><span style="color:rgb(194, 31, 31);">local</span> <span style="color:rgb(223, 84, 84)">taste</span></h1>
                         </p>
                     </a>
                 </div>
 
-                <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span
-                        class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" data-toggle="collapse" data-target=#navbarCollapse><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li>
@@ -131,11 +131,11 @@ fclose($fp);
 
     <section id="formulaire-contact">
         <div class="container">
-    <?php
+            <?php
 
-                            echo "<div class=\"message-ok\" > $validation </div> ";
+            echo "<div class=\"message-ok\" > $validation </div> ";
 
-                        ?>
+            ?>
             <form action="contact.php" method="post">
                 <fieldset>
                     <h1 id="titre-contact">Contact</h1>
@@ -146,10 +146,10 @@ fclose($fp);
                         </div>
                         <?php
 
-                            echo "<div class=\"message-erreur\" > $name_error </div> ";
+                        echo "<div class=\"message-erreur\" > $name_error </div> ";
 
                         ?>
-                    
+
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
@@ -157,12 +157,12 @@ fclose($fp);
                             <input type="text" name="telephone" class="form-control" id="phone">
                         </div>
 
-                             <?php
+                        <?php
 
-                            echo "<div class=\"message-erreur\" > $phone_error </div> ";
+                        echo "<div class=\"message-erreur\" > $phone_error </div> ";
 
-                            ?>
-                    
+                        ?>
+
 
                     </div>
                     <div class="form-group row">
@@ -171,23 +171,22 @@ fclose($fp);
                             <input type="text" name="email" class="form-control" id="inputEmail">
                         </div>
 
-                             <?php
+                        <?php
 
-                            echo "<div class= \"message-erreur\" > $email_error </div> ";
+                        echo "<div class= \"message-erreur\" > $email_error </div> ";
 
-                            ?>
-                    
+                        ?>
+
 
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Commentaires:</label>
-                        <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1"
-                            rows="5"></textarea>
-                            <?php
+                        <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        <?php
 
-                            echo "<div class=\"message-erreur\" > $comment_error </div> ";
+                        echo "<div class=\"message-erreur\" > $comment_error </div> ";
 
-                            ?>
+                        ?>
                     </div>
                     <button type="submit" class="btn btn-primary bouton-envoyer">Envoyer</button>
                 </fieldset>
@@ -195,22 +194,13 @@ fclose($fp);
         </div>
         <div class="container">
             <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8773310194797!2d6.126604616619462!3d46.19299969253617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0x6058f3a4660b6a0b!2sRue%20Viguet%208%2C%201227%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1605703114904!5m2!1sfr!2sch"
-                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8773310194797!2d6.126604616619462!3d46.19299969253617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0x6058f3a4660b6a0b!2sRue%20Viguet%208%2C%201227%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1605703114904!5m2!1sfr!2sch" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <footer id="footer-contact">
 
@@ -232,10 +222,7 @@ fclose($fp);
                 </div>
                 <div class="col-sm-6">
                     <h4>Contact</h4>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8802012085266!2d6.12650291555611!3d46.19294257911629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0xb6bbc30dd8e5306f!2sr%C3%A9alise%20-%20magasin%20d&#39;informatique%20d&#39;occasion!5e0!3m2!1sfr!2sch!4v1605783655516!5m2!1sfr!2sch"
-                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
-                        aria-hidden="false" tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.8802012085266!2d6.12650291555611!3d46.19294257911629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0xb6bbc30dd8e5306f!2sr%C3%A9alise%20-%20magasin%20d&#39;informatique%20d&#39;occasion!5e0!3m2!1sfr!2sch!4v1605783655516!5m2!1sfr!2sch" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
 
