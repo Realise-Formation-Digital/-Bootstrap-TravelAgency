@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si le nom ne contient que des lettres et des espaces
         if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $name)) {
             $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
+            $_POST["nom"] = "";
         }
     }
 
@@ -28,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si l'adresse e-mail est bien formée
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $email_error = "Format d'email invalide";
+            $_POST["email"] = "";
         }
     }
 
@@ -38,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // vérifier si l'adresse e-mail est bien formée
         if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i", $phone)) {
             $phone_error = "Numéro de téléphone invalide";
+            $_POST["telephone"] = "";
         }
     }
 
@@ -55,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])) {
-        $validation = "Votre meassage à bien été envoyé!";
+        $validation = "Votre message à bien été envoyé!";
         // Open file in append mode 
         $fp = fopen('databaseContact.csv', 'a');
 
