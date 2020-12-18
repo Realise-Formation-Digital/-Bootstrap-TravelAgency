@@ -1,70 +1,77 @@
-.map-container{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-    }
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
 
-.map-container iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 #formulaire-contact {
-    background-color: rgba(0, 0, 0, .2);
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 5%;
 }
 
 #titre-contact {
-    padding: 0px 3px;
-    font-weight: bold;
+  padding: 0px 3px;
+  font-weight: bold;
 }
 
 fieldset {
-    margin-bottom: 15px;
-    padding: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
 }
 
 #body-contact {
-    font-family: 'Nunito', sans-serif;
-    background: rgb(194, 222, 255);
-   /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
+  font-family: "Nunito", sans-serif;
+  background: rgb(194, 222, 255);
+  /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%); */
 }
 
 .bouton-envoyer {
-    float: right;
+  float: right;
 }
 
 .logo-fleur {
-    height: 15vh;
-    display: inline-block;
+  height: 15vh;
+  display: inline-block;
 }
 
 .nav-link {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 header {
-    font-family: 'Nunito', sans-serif;
-    background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff;
 }
 
 footer {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 #footer-contact {
-    padding-top: 1vw;
+  padding-top: 1vw;
 }
 
-.message-erreur{
-    color: red;
-    position: relative;
-    text-align: center;
-    font-size: 14px;
+.message-erreur {
+  color: red;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+}
+
+.message-ok {
+  color: green;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
 }
