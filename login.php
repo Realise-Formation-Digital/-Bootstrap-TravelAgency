@@ -1,9 +1,77 @@
+<?php
+
+$email = $password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    if (empty($_POST["email"])) {
+        $email_error = "Email est requis";
+    } else {
+        $email = test_input($_POST["email"]);
+        // vérifier si l'adresse e-mail est bien formée
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $email_error = "Format d'email invalide";
+        }
+    }
+
+// Validate password strength
+$uppercase = preg_match('@[A-Z]@', $password);
+$lowercase = preg_match('@[a-z]@', $password);
+$number    = preg_match('@[0-9]@', $password);
+$specialChars = preg_match('@[^\w]@', $password);
+
+
+
+    if (empty($_POST["password"])) {
+        $password_error = "Le password est requis";
+    } else {
+        $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = test_input($_POST['password']);
+ 
+
+        // vérifier si mot de pass est bien formée
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+            $password_error = 'Le mot de passe doit comporter au moins 8 caractères et doit inclure au moins une lettre majuscule, un chiffre et un caractère spécial.';
+        }
+    }
+
+
+    $data = array(
+        $_POST['email'],
+        $hash
+    );
+
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $validation = "Bienvenue $email!";
+        // Open file in append mode
+        $fp = fopen('users.csv', 'a');
+
+        // Append input data to the file
+        fputcsv($fp, $data);
+
+        // close the file 
+        fclose($fp);
+    }
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Document</title>
    
@@ -138,28 +206,50 @@
  <div class="container">
     <div class="row">
         <div class="col-sm-6">
+
+           <?php
+
+            echo "<div class=\"message-ok\" > $validation </div> ";
+
+            ?>
+
+        <form action="login.php" method="post"> 
+
+            <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <medium id="emailHelp" class="form-text text-muted"></small>
+
+                 <?php
+
+                        echo "<div class=\"message-erreur\" > $email_error </div> ";
+
+                        ?>
+
           </div> 
 
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+                 <?php
+
+                        echo "<div class=\"message-erreur\" > $password_error </div> ";
+
+                        ?>
+
           </div>
 
-         <div class="form-check">
-             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+         <div class="form-group">
                 <button type="submit" class="btn btn-primary">lOGIN</button>
          </div>
+         </form>
          <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     
                     <ul><strong>Nous vous remercions de votre fidélité</strong></ul>
-     
-                   
+
                 </div>
                 <div class="col-sm-6">
        
