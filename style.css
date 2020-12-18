@@ -61,3 +61,8 @@ footer {
 #footer-contact {
     padding-top: 1vw;
 }
+
+.message-erreur{
+    position: center;
+    color: red;
+}
