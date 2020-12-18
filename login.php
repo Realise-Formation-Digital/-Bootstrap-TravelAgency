@@ -11,6 +11,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return $data;
     }
 
+    // Validate password strength
+    $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+    if (empty($_POST["password"])) {
+        $password_error = "Le password est requis";
+    } else {
+        $password = test_input($_POST["password"]);
+        // vérifier si le nom ne contient que des lettres et des espaces
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $password)) {
+            $password_error = "Seuls les lettres et les chiffres sont autorisés";
+            $_POST["password"] = "";
+        }
+    }
+
     if (empty($_POST["email"])) {
         $email_error = "Email est requis";
     } else {
@@ -19,22 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $email_error = "Format d'email invalide";
             $_POST["email"] = "";
-        }
-    }
-
-    if (empty($_POST["password"])) {
-        $password_error = "Le password est requis";
-    } else {
-        $password = test_input($_POST['password']);
-        $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-        $specialChars = preg_match('@[^\w]@', $password);
-        // vérifier si mot de pass est bien formée
-        if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-            $password_error = 'Le mot de passe doit comporter au moins 8 caractères et doit inclure au moins une lettre majuscule, un chiffre et un caractère spécial.';
         }
     }
 
@@ -234,10 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <?php
 
-                        if (!$validation) {
-
-                            echo "<div class=\"message-erreur\" > $password_error </div> ";
-                        }
+                        echo "<div class=\"message-erreur\" > $password_error </div> ";
 
                         ?>
 
