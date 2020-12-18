@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {
         $name = test_input($_POST["nom"]);
         // vérifier si le nom ne contient que des lettres et des espaces
-        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+        if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/",$name)) {
           $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
         }
       }
@@ -40,6 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       }
 
+      if (empty($_POST["commentaire"])) {
+        $comment_error = "Un commentaire est requis";
+      } else {
+        $comment = test_input($_POST["commentaire"]);
+        
+      }
+
 $data = array(
     $_POST['nom'],
     $_POST['email'],
@@ -47,6 +54,8 @@ $data = array(
     $_POST['commentaire']
 );
 
+if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])){
+$validation = "Votre meassage à bien été envoyé!";
 // Open file in append mode 
 $fp = fopen('databaseContact.csv', 'a');
 
@@ -55,6 +64,7 @@ fputcsv($fp, $data);
 
 // close the file 
 fclose($fp);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -121,7 +131,11 @@ fclose($fp);
 
     <section id="formulaire-contact">
         <div class="container">
+    <?php
 
+                            echo "<div class=\"message-ok\" > $validation </div> ";
+
+                        ?>
             <form action="contact.php" method="post">
                 <fieldset>
                     <h1 id="titre-contact">Contact</h1>
@@ -147,7 +161,7 @@ fclose($fp);
 
                             echo "<div class=\"message-erreur\" > $phone_error </div> ";
 
-                        ?>
+                            ?>
                     
 
                     </div>
@@ -161,7 +175,7 @@ fclose($fp);
 
                             echo "<div class= \"message-erreur\" > $email_error </div> ";
 
-                        ?>
+                            ?>
                     
 
                     </div>
@@ -169,6 +183,11 @@ fclose($fp);
                         <label for="exampleFormControlTextarea1">Commentaires:</label>
                         <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1"
                             rows="5"></textarea>
+                            <?php
+
+                            echo "<div class=\"message-erreur\" > $comment_error </div> ";
+
+                            ?>
                     </div>
                     <button type="submit" class="btn btn-primary bouton-envoyer">Envoyer</button>
                 </fieldset>
