@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group row">
                         <label for="inlineFormInputName" class="col-sm-2 col-form-label">Nom:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nom" class="form-control" id="inlineFormInputName">
+                            <input type="text" name="nom" placeholder="votre nom" class="form-control" id="inlineFormInputName">
                         </div>
                         <?php
 
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="telephone" class="form-control" id="phone">
+                            <input type="text" name="telephone" placeholder="0781234567" class="form-control" id="phone">
                         </div>
 
                         <?php
@@ -171,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="email" class="form-control" id="inputEmail">
+                            <input type="text" name="email" placeholder="email@example.com" class="form-control" id="inputEmail">
                         </div>
 
                         <?php
@@ -184,12 +184,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Commentaires:</label>
-                        <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+
                         <?php
 
-                        echo "<div class=\"message-erreur\" > $comment_error </div> ";
+                        echo "<div class=\"message-erreur\" style=\"padding-left:0\" > $comment_error </div><br /> ";
 
                         ?>
+
+                        <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+
                     </div>
                     <button type="submit" class="btn btn-primary bouton-envoyer">Envoyer</button>
                 </fieldset>
