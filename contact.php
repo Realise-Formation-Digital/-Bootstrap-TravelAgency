@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])) {
         $validation = "Votre message à bien été envoyé!";
-        // Open file in append mode 
+        // Open file in append mode
         $fp = fopen('databaseContact.csv', 'a');
 
-        // Append input data to the file   
+        // Append input data to the file
         fputcsv($fp, $data);
 
         // close the file 
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li>
                             <a href="contact.php" class="nav-link">Contact</a>
                         <li>
-                            <a href="./login.html" class="btn btn-primary" role="button">&#9757lOGIN</a>
+                            <a href="./login.php" class="btn btn-primary" role="button">&#9757lOGIN</a>
 
                         </li>
                         </li>
