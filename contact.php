@@ -59,9 +59,6 @@ fputcsv($fp, $data);
 // close the file 
 fclose($fp);
 ?>
-<<<<<<< HEAD
-
-=======
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -243,4 +240,3 @@ fclose($fp);
 </body>
 
 </html>
->>>>>>> main
