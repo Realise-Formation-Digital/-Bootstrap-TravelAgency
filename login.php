@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-        $validation = "Bienvenue $email";
         // Open file in append mode
         $fp = fopen('users.csv', 'a');
 
@@ -56,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // close the file 
         fclose($fp);
-
         header('Location: private.php');
     }
 }
@@ -70,13 +68,11 @@ include('header.php');
 
 <div class="container">
     <div class="row">
+        <div class="col-sm-3">
+        </div>
         <div class="col-sm-6">
 
-            <?php
-
-            echo "<div class=\"message-ok\" > $validation </div> ";
-
-            ?>
+            <p class="badge-danger rounded-pill text-center">Nous vous remercions de votre fidélité</p>
 
             <form action="login.php" method="post">
 
@@ -105,24 +101,17 @@ include('header.php');
 
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">lOGIN</button>
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-danger">OK</button>
                 </div>
             </form>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-
-                    </div>
-                    <div class="col-sm-6">
-
-                        <ul><strong>Nous vous remercions de votre fidélité</strong></ul>
-
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="col-sm-3">
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 <p>
 </p>
