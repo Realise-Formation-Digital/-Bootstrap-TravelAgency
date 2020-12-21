@@ -32,7 +32,7 @@ include('header.php');
                 </div>
                 <div class="col-sm-8">
                     <div class="card-body-right">
-                        <h4 class="card-title">Mélodie Ruisseau</h4>
+                        <h4 class="card-title pt-4">Mélodie Ruisseau</h4>
                         <p class="card-text">Vous cherchez le calme et l'évasion ? Mon parcours est pour les esprits en
                             recherche de calme pour se retrouver soi-même ou avec d'autres. Un panier pic nic de roi
                             vous attendra avant de partir sur un itineraire calme, serein et qui se terminera au bord
@@ -54,7 +54,7 @@ include('header.php');
                 </div>
                 <div class="col-sm-8">
                     <div class="card-body-right">
-                        <h4 class="card-title">Jean Terrasse</h4>
+                        <h4 class="card-title pt-4">Jean Terrasse</h4>
                         <p class="card-text">La ville est mon environnement, car il en est plusieurs. En
                             une après-midi, musées, terrasses, concerts et pleins d'autres vous donnerons
                             un sentiment d'évasion unique.</p>
@@ -75,7 +75,7 @@ include('header.php');
                 </div>
                 <div class="col-sm-8">
                     <div class="card-body-right">
-                        <h4 class="card-title">J.M Bonvin</h4>
+                        <h4 class="card-title pt-4">J.M Bonvin</h4>
                         <p class="card-text">Passionné de montagne depuis mon plus jeune âge, j'ai le plaisir de
                             vous proposer ma sélection de balades qui seront parsemées de haltes culinaires,
                             panoramiques rythmé par les saisons et les humeurs de la faune.</p>

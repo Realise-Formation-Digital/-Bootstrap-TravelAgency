@@ -14,15 +14,16 @@
 }
 
 #formulaire-contact {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding-top: 5%;
-  padding-bottom: 5%;
-  margin: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  margin: 1rem;
 }
 
 #titre-contact {
   padding: 0px 3px;
   font-weight: bold;
+  text-align: center;
 }
 
 fieldset {

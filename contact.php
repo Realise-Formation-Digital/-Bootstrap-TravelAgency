@@ -88,45 +88,44 @@ include('header.php');
         ?>
         <form action="contact.php" method="post">
             <fieldset>
-                <h1 id="titre-contact">Contact</h1><br />
+                <h1 id="titre-contact" class="text-secondary">Contact</h1><br />
                 <div class="form-group row">
                     <label for="inlineFormInputName" class="col-sm-2 col-form-label">Nom:</label>
                     <div class="col-sm-10">
-                        <input type="text" name="nom" class="form-control" id="inlineFormInputName">
+                        <input type="text" name="nom" class="form-control" id="inlineFormInputName" placeholder="Votre nom">
+                        <?php
+
+                        echo "<div class=\"message-erreur\" > $name_error </div> ";
+
+                        ?>
                     </div>
-                    <?php
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre email">
 
-                    echo "<div class=\"message-erreur\" > $name_error </div> ";
+                        <?php
 
-                    ?>
+                        echo "<div class= \"message-erreur\" > $email_error </div> ";
+
+                        ?>
+
+                    </div>
 
                 </div>
                 <div class="form-group row">
                     <label for="phone" class="col-sm-2 col-form-label">Tél:</label>
                     <div class="col-sm-10">
-                        <input type="text" name="telephone" class="form-control" id="phone">
+                        <input type="text" name="telephone" class="form-control" id="phone" placeholder="ex: 0781234567">
+
+
+                        <?php
+
+                        echo "<div class=\"message-erreur\" > $phone_error </div> ";
+
+                        ?>
                     </div>
-
-                    <?php
-
-                    echo "<div class=\"message-erreur\" > $phone_error </div> ";
-
-                    ?>
-
-
-                </div>
-                <div class="form-group row">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="email" class="form-control" id="inputEmail">
-                    </div>
-
-                    <?php
-
-                    echo "<div class= \"message-erreur\" > $email_error </div> ";
-
-                    ?>
-
 
                 </div>
                 <div class="form-group">
