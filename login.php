@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-        $success = true;
+        $success = '0';
 
         $file = 'users.csv';
 
@@ -56,14 +56,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 foreach ($data as $item) {
 
                     if ($item == $_POST['email']) {
+
                         $email_error = "Cet email est déjà utilisé";
-                        $success = false;
+                        $success = '1';
                     }
                 }
             }
         }
 
-        if ($success == true) {
+        if ($success == '2') {
+
+            session_start();
+            $_SESSION['auth'] = $email;
+            header('Location: private.php');
+        } else if ($success == '0') {
 
             $dataPost = array(
                 $_POST['email'],
