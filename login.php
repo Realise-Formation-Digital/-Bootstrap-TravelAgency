@@ -36,26 +36,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    $data = array(
-        $_POST['email'],
-        $hash
-    );
-
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-        // Open file in append mode
-        $fp = fopen('users.csv', 'a');
+        $success = true;
 
-        // Append input data to the file
-        fputcsv($fp, $data);
+        $file = 'users.csv';
 
-        // Crée un user authentifié
-        session_start();
-        $_SESSION['auth'] = $email;
+        // The nested array to hold all the arrays
+        $the_big_array = [];
 
-        // close the file 
-        fclose($fp);
-        header('Location: private.php');
+        // Open the file for reading
+        if (($h = fopen("{$file}", "r")) !== FALSE) {
+            // Each line in the file is converted into an individual array that we call $data
+            // The items of the array are comma separated
+            while (($data = fgetcsv($h, 1000, ",")) !== FALSE) {
+                // Each individual array is being pushed into the nested array
+                $the_big_array[] = $data;
+
+                foreach ($data as $item) {
+
+                    if ($item == $_POST['email']) {
+                        $email_error = "Cet email est déjà utilisé";
+                        $success = false;
+                    }
+                }
+            }
+        }
+
+        if ($success == true) {
+
+            $dataPost = array(
+                $_POST['email'],
+                $hash
+            );
+
+            // Open file in append mode
+            $fp = fopen('users.csv', 'a');
+
+            // Append input data to the file
+            fputcsv($fp, $dataPost);
+
+            // Crée un user authentifié
+            session_start();
+            $_SESSION['auth'] = $email;
+
+            // close the file 
+            fclose($fp);
+            header('Location: private.php');
+        }
     }
 }
 
