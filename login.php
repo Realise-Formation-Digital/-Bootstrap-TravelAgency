@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
-        $success = '0';
+        $success = '1';
         $file = 'users.csv';
         // Open the file for reading
         if (($h = fopen("{$file}", "r")) !== FALSE) {
@@ -43,31 +43,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (($cell == $_POST['email']) && ($hash == $auth)) {
                         $success = '2';
                     } elseif (($cell == $_POST['email']) && ($hash != $auth)) {
-                        $email_error = "$cell est déjà utilisé";
-                        $success = '1';
+                        $currentEmail = $cell;
+                        $success = '0';
                     }
                 }
             }
         }
-        if ($success == '2') {
-            session_start();
-            $_SESSION['auth'] = $email;
-            header('Location: private.php');
-        } else if ($success == '0') {
-            $dataPost = array(
-                $_POST['email'],
-                $hash
-            );
-            // Open file in append mode
-            $fp = fopen('users.csv', 'a');
-            // Append input data to the file
-            fputcsv($fp, $dataPost);
-            // Crée un user authentifié
-            session_start();
-            $_SESSION['auth'] = $email;
-            // close the file 
-            fclose($fp);
-            header('Location: private.php');
+        switch ($success) {
+            case '0':
+                $email_error = "L'email <b>$currentEmail</b> est déjà utilisé";
+                $password_error = "Mot de passe invalide";
+                break;
+            case '1':
+                $dataPost = array(
+                    $_POST['email'],
+                    $hash
+                );
+                // Open file in append mode
+                $fp = fopen('users.csv', 'a');
+                // Append input data to the file
+                fputcsv($fp, $dataPost);
+                // Crée un user authentifié
+                session_start();
+                $_SESSION['auth'] = $email;
+                // close the file 
+                fclose($fp);
+                header('Location: private.php');
+                break;
+            case '2':
+                session_start();
+                $_SESSION['auth'] = $email;
+                header('Location: private.php');
+                break;
         }
     }
 }
