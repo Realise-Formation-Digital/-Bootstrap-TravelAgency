@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,10 +133,24 @@
                         <li>
                             <a href="contact.php" class="nav-link">Contact</a>
                         </li>
+                        <?php
+
+                        if (isset($_SESSION['auth'])) {
+                            echo "<li><a class=\"nav-link\" href=\"private.php\">Privé</a></li>";
+                        } ?>
                         <li>
-                            <a href="login.php" class="btn btn-primary" role="button">&#9757lOGIN</a>
+                            <?php if (isset($_SESSION['auth'])) {
+                                echo "<a class=\"btn btn-primary\" type=\"button\" href=\"logout.php\">Log Out</a>";
+                            } else {
+                                echo "<a class=\"btn btn-primary\" type=\"button\" href=\"login.php\">Log In</a>";
+                            } ?>
 
                         </li>
+
+
+
+
+
                     </ul>
                 </div>
             </nav>
