@@ -1,4 +1,5 @@
 <?php
+// Affiche le header
 include('header.php');
 ?>
 <section class="hero">
@@ -215,5 +216,6 @@ include('header.php');
     </div>
 </div>
 <?php
+// Affiche le footer
 include('footer.php');
 ?>

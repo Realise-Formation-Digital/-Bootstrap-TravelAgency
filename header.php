@@ -1,6 +1,7 @@
 <?php
+// Si pas de session ouverte
 if (session_status() == PHP_SESSION_NONE) {
-
+// Ouvrir session
     session_start();
 }
 
@@ -138,13 +139,19 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a href="contact.php" class="nav-link">Contact</a>
                         </li>
                         <?php
-
-                        if (isset($_SESSION['auth'])) {
+                        // Si un utilisateur est authentifié
+                          if (isset($_SESSION['auth'])) {
+                        // Afficher le bouton privé dans le menu
                             echo "<li><a class=\"nav-link\" href=\"private.php\">Privé</a></li>";
                         } ?>
                         <li>
-                            <?php if (isset($_SESSION['auth'])) {
+                            
+                            <?php
+                            // Si un utilisateur est authentifié
+                             if (isset($_SESSION['auth'])) {
+                            // Afficher le bouton log out dans le menu   
                                 echo "<a class=\"btn btn-danger\" type=\"button\" href=\"logout.php\">Log Out</a>";
+                                // Sinon afficher le bouton log in
                             } else {
                                 echo "<a class=\"btn btn-danger\" type=\"button\" href=\"login.php\">Log In</a>";
                             } ?>

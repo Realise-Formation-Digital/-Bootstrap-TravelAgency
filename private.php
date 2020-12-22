@@ -1,4 +1,5 @@
 <?php
+// Affiche le header
 include('header.php');
 
 ?>
@@ -7,11 +8,12 @@ include('header.php');
         <div class="text-center">
             <h2><br>Page privée</h2>
             <?php
+            // Si utilisateur est pas authentifié
             if (!isset($_SESSION['auth'])) {
-
+                // Afficher  message accès refusé
                 echo "<div class=\"message-notok\" >Accès refusé</div><br /><br />";
             } else {
-
+                // Sinon afficher message de bienvenue et retourne le contenu du fichier database contact.csv sous forme de tableau
                 echo "<div class=\"message-ok\" >Bienvenue <b>" . $_SESSION['auth'] . "</b></div><br />
                 <div class=\"row justify-content-center text-center\"><table class=\"table table-light rounded\">
                 <thead>
@@ -23,6 +25,7 @@ include('header.php');
                 </tr>
               </thead>
               <tbody>";
+              
                 $f = fopen("databaseContact.csv", "r");
                 while (($line = fgetcsv($f)) !== false) {
                     echo "<tr>";
@@ -43,5 +46,6 @@ include('header.php');
 </div>
 
 <?php
+// Affiche le footer
 include('footer.php');
 ?>
