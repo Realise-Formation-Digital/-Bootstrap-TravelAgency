@@ -25,7 +25,7 @@ include('header.php');
                 </tr>
               </thead>
               <tbody>";
-              
+
                 $f = fopen("databaseContact.csv", "r");
                 while (($line = fgetcsv($f)) !== false) {
                     echo "<tr>";
