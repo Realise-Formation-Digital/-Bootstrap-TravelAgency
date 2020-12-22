@@ -1,4 +1,6 @@
 docker-compose.yml
+databaseContact.csv
+users.csv
 
 # Logs
 logs
