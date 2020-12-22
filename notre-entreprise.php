@@ -1,4 +1,5 @@
 <?php
+// Affiche le header
 include('header.php');
 ?>
 
@@ -93,5 +94,6 @@ include('header.php');
 <!--------------------------------------------------------------------------->
 
 <?php
+// Affiche le footer
 include('footer.php');
 ?>

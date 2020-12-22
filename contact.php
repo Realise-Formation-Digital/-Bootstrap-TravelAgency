@@ -1,86 +1,104 @@
 <?php
-
+// Remise à 0 des variables
 $nom = $email = $telephone = $commentaire = "";
-
+// Si la méthode de requète du serveur est en POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Déclaration de la fonction test input
     function test_input($data)
     {
+        // Supprime les espaces
         $data = trim($data);
+        // Supprime les /
         $data = stripslashes($data);
+        // Convertit les caractères spéciaux en entités HTML
         $data = htmlspecialchars($data);
         return $data;
     }
-
+    // Si le champ nom est vide
     if (empty($_POST["nom"])) {
+        // Affiche le nom est requis
         $name_error = "Le nom est requis";
     } else {
+        // Sinon il applique la fonction test input à la variable nom du formulaire
         $name = test_input($_POST["nom"]);
-        // vérifier si le nom ne contient que des lettres et des espaces
+        // vérifier si le nom ne contient que des lettres des accents et des espaces
         if (!preg_match("/^[a-zA-ZÀ-ÿ ]*$/", $name)) {
+            // Si ce n'est pas le cas affiche le message d'erreur
             $name_error = "Seuls les lettres et les espaces blancs sont autorisés";
+            // Remise à 0 de la variable nom
             $_POST["nom"] = "";
         }
     }
-
+// Si le champ email est vide
     if (empty($_POST["email"])) {
+        // Affiche le email est requis
         $email_error = "Email est requis";
     } else {
+        // Sinon il applique la fonction test input à la variable email du formulaire
         $email = test_input($_POST["email"]);
         // vérifier si l'adresse e-mail est bien formée
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Si ce n'est pas le cas affiche le message d'erreur
             $email_error = "Format d'email invalide";
+            // Remise à 0 de la variable email
             $_POST["email"] = "";
         }
     }
-
+// Si le champ telephone est vide
     if (empty($_POST["telephone"])) {
+        // Affiche le telephone est requis
         $phone_error = "Le téléphone est requis";
     } else {
+        // Sinon il applique la fonction test input à la variable telephone du formulaire
         $phone = test_input($_POST["telephone"]);
         // vérifier si le telephone est bien formée
         if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i", $phone)) {
+            // Si ce n'est pas le cas affiche le message d'erreur
             $phone_error = "Numéro de téléphone invalide";
+// Remise à 0 de la variable telephone
             $_POST["telephone"] = "";
         }
     }
-
+// Si le champ commentaire est vide
     if (empty($_POST["commentaire"])) {
+        // Affiche le commentaire est requis
         $comment_error = "Un commentaire est requis";
     } else {
+        // Sinon il applique la fonction test input à la variable commentaire du formulaire
         $comment = test_input($_POST["commentaire"]);
     }
-
+// Stock les variables dans un tableau 
     $data = array(
         $_POST['nom'],
         $_POST['email'],
         $_POST['telephone'],
         $_POST['commentaire']
     );
-
+// Si aucun des champs n'est vide 
     if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['telephone']) && !empty($_POST['commentaire'])) {
+        // Affichage du message de validation
         $validation = "Votre message à bien été envoyé!";
-        // Open file in append mode
+        // Ouverture du fichier csv
         $fp = fopen('databaseContact.csv', 'a');
 
-        // Append input data to the file
+        // Ecriture des variables dans le fichier
         fputcsv($fp, $data);
 
-        // close the file 
+        // Fermer le fichier 
         fclose($fp);
     }
 }
 
 
 
-?>
-<?php
+// Affiche le header
 include('header.php');
 ?>
 
 <section id="formulaire-contact" style="border-radius: 25px;">
     <div class="container">
         <?php
-
+// Affichage du message validation si le message à bien été envoyé
         if ($validation != null) {
 
             echo "<div class=\"message-ok\" > $validation </div> <br />";
@@ -94,7 +112,7 @@ include('header.php');
                     <div class="col-sm-10">
                         <input type="text" name="nom" class="form-control" id="inlineFormInputName" placeholder="Votre nom">
                         <?php
-
+// Affichage du message erreur nom
                         echo "<div class=\"message-erreur\" > $name_error </div> ";
 
                         ?>
@@ -106,7 +124,7 @@ include('header.php');
                         <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre email">
 
                         <?php
-
+// Affichage du message erreur email
                         echo "<div class= \"message-erreur\" > $email_error </div> ";
 
                         ?>
@@ -121,7 +139,7 @@ include('header.php');
 
 
                         <?php
-
+// // Affichage du message erreur telephone
                         echo "<div class=\"message-erreur\" > $phone_error </div> ";
 
                         ?>
@@ -132,7 +150,7 @@ include('header.php');
                     <label for="exampleFormControlTextarea1">Commentaires:</label>
                     <textarea name="commentaire" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                     <?php
-
+// Affiche message d'erreur du champ commentaire
                     echo "<div class=\"message-erreur\" > $comment_error </div> ";
 
                     ?>
@@ -152,5 +170,6 @@ include('header.php');
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <?php
+// Affiche le footer
 include('footer.php');
 ?>

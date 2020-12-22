@@ -1,4 +1,5 @@
 <?php
+// Affiche le header
    include('header.php');
    ?>
   <body>
@@ -71,5 +72,6 @@
   </body>
 
   <?php
+  // Affiche le footer
    include('footer.php');
    ?>
