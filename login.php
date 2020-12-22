@@ -1,7 +1,5 @@
 <?php
-
 $email = $password = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function test_input($data)
     {
@@ -10,10 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data = htmlspecialchars($data);
         return $data;
     }
-
     // Validate password strength
     $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
     if (empty($_POST["password"])) {
         $password_error = "Le password est requis";
     } else {
@@ -24,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_POST["password"] = "";
         }
     }
-
     if (empty($_POST["email"])) {
         $email_error = "Email est requis";
     } else {
@@ -35,34 +30,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_POST["email"] = "";
         }
     }
-
-    $data = array(
-        $_POST['email'],
-        $hash
-    );
-
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
-
-        $validation = "Bienvenue $email";
-        // Open file in append mode
-        $fp = fopen('users.csv', 'a');
-
-        // Append input data to the file
-        fputcsv($fp, $data);
-
-        // Crée un user authentifié
-        session_start();
-        $_SESSION['auth'] = $email;
-
-        // close the file 
-        fclose($fp);
-
-        header('Location: private.php');
+        $success = '1';
+        $file = 'users.csv';
+        // Open the file for reading
+        if (($h = fopen("{$file}", "r")) !== FALSE) {
+            // Each line in the file is converted into an individual array that we call $data
+            // The items of the array are comma separated
+            while (($line = fgetcsv($h, 1000, ",")) !== FALSE) {
+                $auth = password_verify($_POST['password'], $line[1]);
+                foreach ($line as $cell) {
+                    if (($cell == $_POST['email']) && ($hash == $auth)) {
+                        $success = '2';
+                    } elseif (($cell == $_POST['email']) && ($hash != $auth)) {
+                        $currentEmail = $cell;
+                        $success = '0';
+                    }
+                }
+            }
+        }
+        switch ($success) {
+            case '0':
+                $email_error = "L'email <b>$currentEmail</b> est déjà utilisé";
+                $password_error = "Mot de passe invalide";
+                break;
+            case '1':
+                $dataPost = array(
+                    $_POST['email'],
+                    $hash
+                );
+                // Open file in append mode
+                $fp = fopen('users.csv', 'a');
+                // Append input data to the file
+                fputcsv($fp, $dataPost);
+                // Crée un user authentifié
+                session_start();
+                $_SESSION['auth'] = $email;
+                // close the file 
+                fclose($fp);
+                header('Location: private.php');
+                break;
+            case '2':
+                session_start();
+                $_SESSION['auth'] = $email;
+                header('Location: private.php');
+                break;
+        }
     }
 }
-
-
-
 include('header.php');
 ?>
 
@@ -70,19 +85,17 @@ include('header.php');
 
 <div class="container">
     <div class="row">
+        <div class="col-sm-3">
+        </div>
         <div class="col-sm-6">
 
-            <?php
-
-            echo "<div class=\"message-ok\" > $validation </div> ";
-
-            ?>
+            <p class="badge-danger rounded-pill text-center">Nous vous remercions de votre fidélité</p>
 
             <form action="login.php" method="post">
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                     <medium id="emailHelp" class="form-text text-muted"></small>
 
                         <?php
@@ -95,7 +108,7 @@ include('header.php');
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
 
                     <?php
 
@@ -105,24 +118,17 @@ include('header.php');
 
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">lOGIN</button>
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-danger">OK</button>
                 </div>
             </form>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-
-                    </div>
-                    <div class="col-sm-6">
-
-                        <ul><strong>Nous vous remercions de votre fidélité</strong></ul>
-
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="col-sm-3">
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 <p>
 </p>

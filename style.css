@@ -14,15 +14,16 @@
 }
 
 #formulaire-contact {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding-top: 5%;
-  padding-bottom: 5%;
-  margin: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  margin: 1rem;
 }
 
 #titre-contact {
   padding: 0px 3px;
   font-weight: bold;
+  text-align: center;
 }
 
 fieldset {
@@ -64,15 +65,25 @@ footer {
 
 .message-erreur {
   color: red;
-  padding-left:15px;
   text-align: left;
   font-size: 14px;
 }
 
 
 .message-ok {
-  color: green;
-  position: relative;
+  color: rgb(56, 185, 164);
+  background-color: rgb(255, 255, 255, 0.4);
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
+  border-radius:25px;
+  padding: 10px;
+}
+
+.message-notok {
+  color: red;
+  background-color: rgb(255, 255, 255, 0.4);
+  text-align: center;
+  font-size: 18px;
+  border-radius:25px;
+  padding: 10px;
 }
