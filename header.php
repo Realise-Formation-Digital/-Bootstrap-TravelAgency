@@ -1,5 +1,9 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+
+    session_start();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +14,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Local Taste - Travel Agency</title>
 
     <!--CSS Integrer-->
     <style>
@@ -108,10 +112,10 @@ session_start();
 
         <!-- Barre de navigation avec logo -->
         <div class="container">
-            <nav class="navbar navbar-light navbar-expand-lg">
+            <nav class="navbar navbar-light navbar-expand-xl">
                 <div class="row">
-                    <a href="index.php" class="navbar-brand">
-                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur mr-2">
+                    <a href="index.php" class="navbar-brand" title="Accueil">
+                        <img src="assets/img/logo-fleur.png" alt="Edelweiss" class="float-left logo-fleur">
                         <p class="align-middle">
                             <h1 class="h1-home"><span style="color:rgb(194, 31, 31);">local</span> <span style="color:rgb(223, 84, 84)">taste</span></h1>
                         </p>
@@ -140,9 +144,9 @@ session_start();
                         } ?>
                         <li>
                             <?php if (isset($_SESSION['auth'])) {
-                                echo "<a class=\"btn btn-primary\" type=\"button\" href=\"logout.php\">Log Out</a>";
+                                echo "<a class=\"btn btn-danger\" type=\"button\" href=\"logout.php\">Log Out</a>";
                             } else {
-                                echo "<a class=\"btn btn-primary\" type=\"button\" href=\"login.php\">Log In</a>";
+                                echo "<a class=\"btn btn-danger\" type=\"button\" href=\"login.php\">Log In</a>";
                             } ?>
 
                         </li>
