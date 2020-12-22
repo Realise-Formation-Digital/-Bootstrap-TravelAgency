@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ouvrir le fichier csv en lecture
         if (($h = fopen("{$file}", "r")) !== FALSE) {
             // Tant que le fichier contient des lignes 
-        
+
             while (($line = fgetcsv($h, 1000, ",")) !== FALSE) {
                 // Vérification de la validité du mot de passe
                 $auth = password_verify($_POST['password'], $line[1]);
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $email_error = "L'email <b>$currentEmail</b> est déjà utilisé";
                 $password_error = "Mot de passe invalide";
                 break;
-                
+
             case '1':
                 // Si la variable succes = 1
                 // Stock l'email et le mot de passe dans un tableau
@@ -129,7 +129,7 @@ include('header.php');
                     <medium id="emailHelp" class="form-text text-muted"></small>
 
                         <?php
-// Affichage du message d'erreur email
+                        // Affichage du message d'erreur email
                         echo "<div class=\"message-erreur\" > $email_error </div> ";
 
                         ?>
@@ -141,7 +141,7 @@ include('header.php');
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
 
                     <?php
-// Affichage du message d'erreur mot de passe
+                    // Affichage du message d'erreur mot de passe
                     echo "<div class=\"message-erreur\" > $password_error </div> ";
 
                     ?>
